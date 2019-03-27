@@ -15,9 +15,13 @@ autocmd  BufReadPost,FileReadPost   *.enc redraw!
 "
 autocmd  BufWritePre,FileWritePre   *.enc mark z
 autocmd  BufWritePre,FileWritePre   *.enc set binary cmdheight=3 shell=/bin/sh
-autocmd  BufWritePre,FileWritePre   *.enc '[,']!openssl aes-256-cbc -salt
+autocmd  BufWritePre,FileWritePre   *.enc '[,']!openssl aes-256-cbc -salt -md5
 "
 autocmd  BufWritePost,FileWritePost *.enc undo
 autocmd  BufWritePost,FileWritePost *.enc set nobinary cmdheight& shell&
 autocmd  BufWritePost,FileWritePost *.enc 'z
 augroup END
+
+colo elflord
+syntax on
+set shiftwidth=4
